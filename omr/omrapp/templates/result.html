@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OMR Result</title>
+    <style>
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 1px solid #ccc;
+            background-color: #fff;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+        }
+        .popup img {
+            width: 100%;
+            height: auto;
+        }
+        .popup .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #f44336;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <button id="showPopupBtn">Show OMR Result</button>
+    <div class="popup" id="popup">
+        <button class="close-btn" id="closePopupBtn">Close</button>
+        <img src="{{ image_url }}" alt="OMR Result">
+    </div>
+    <script>
+        document.getElementById('showPopupBtn').addEventListener('click', function() {
+            document.getElementById('popup').style.display = 'block';
+        });
+        document.getElementById('closePopupBtn').addEventListener('click', function() {
+            document.getElementById('popup').style.display = 'none';
+        });
+    </script>
+</body>
+</html>
